@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
+        url: "/icon.ico",
+        sizes: "any",
+        type: "image/x-icon"
+      },
+      {
         url: "/icon-light-32x32.png",
         media: "(prefers-color-scheme: light)",
       },
