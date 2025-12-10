@@ -31,11 +31,20 @@ export function ReactionTrainer() {
   const getRandomDelay = useCallback(() => {
     const minMs = minInterval * 1000
     const maxMs = maxInterval * 1000
-    return Math.floor(Math.random() * (maxMs - minMs)) + minMs
+    
+    // Ensure min is not greater than max
+    const actualMin = Math.min(minInterval, maxInterval)
+    const actualMax = Math.max(minInterval, maxInterval)
+    
+    const actualMinMs = actualMin * 1000
+    const actualMaxMs = actualMax * 1000
+    
+    return Math.floor(Math.random() * (actualMaxMs - actualMinMs)) + actualMinMs
   }, [minInterval, maxInterval])
 
   const scheduleNextBeep = useCallback(() => {
     const delay = getRandomDelay()
+    console.log(`Next signal in ${delay/1000}s (min: ${minInterval}s, max: ${maxInterval}s)`)
 
     timeoutRef.current = setTimeout(() => {
       playBeep()
@@ -46,7 +55,7 @@ export function ReactionTrainer() {
         scheduleNextBeep()
       }, 1000)
     }, delay)
-  }, [playBeep, getRandomDelay])
+  }, [playBeep, getRandomDelay, minInterval, maxInterval])
 
   const startLoop = useCallback(() => {
     setGameState("running")
