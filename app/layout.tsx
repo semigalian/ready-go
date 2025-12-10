@@ -28,6 +28,22 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
+  other: {
+    'fc:miniapp': JSON.stringify({
+      version: 'next',
+      imageUrl: 'https://traingo.xyz/og-image.png',
+      button: {
+        title: 'Launch Ready Go',
+        action: {
+          type: 'launch_miniapp',
+          name: 'Ready Go',
+          url: 'https://traingo.xyz',
+          splashImageUrl: 'https://traingo.xyz/splash-image.png',
+          splashBackgroundColor: '#1a1a1a',
+        },
+      },
+    }),
+  },
 }
 
 export const viewport: Viewport = {
