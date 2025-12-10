@@ -214,17 +214,7 @@ export function ReactionTrainer() {
               }
             }}
           >
-            {gameState === "running" ? (
-              <>
-                <Square className="w-4 h-4 mr-2" />
-                Stop Training
-              </>
-            ) : (
-              <>
-                <Play className="w-4 h-4 mr-2" />
-                Start Training
-              </>
-            )}
+            {gameState === "running" ? "Stop Training" : "Start Training"}
           </Button>
         </div>
       </div>
