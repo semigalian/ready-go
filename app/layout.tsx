@@ -48,6 +48,7 @@ export const metadata: Metadata = {
         },
       },
     }),
+    'base:app_id': '693950fbe6be54f5ed71d4fe',
   },
 }
 
