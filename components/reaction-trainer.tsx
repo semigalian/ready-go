@@ -136,7 +136,7 @@ export function ReactionTrainer() {
       >
         <div className="text-center">
           <h1
-            className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-2 text-foreground`}
+            className={`text-6xl sm:text-7xl md:text-8xl font-bold tracking-tighter mb-2 text-foreground`}
           >
             {getMessage()}
           </h1>
