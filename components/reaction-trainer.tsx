@@ -142,7 +142,7 @@ export function ReactionTrainer() {
           </h1>
 
           {gameState === "idle" && (
-            <p className="text-sm mt-6 text-muted-foreground">Press Start to begin continuous training</p>
+            <p className="text-sm mt-6 text-muted-foreground">Train your reaction speed for armwrestling</p>
           )}
 
           {gameState === "running" && !isSignalActive && (
