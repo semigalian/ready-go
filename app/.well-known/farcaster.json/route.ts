@@ -15,18 +15,18 @@ export async function GET() {
       "splashImageUrl": `${URL}/splash-image.png`,
       "splashBackgroundColor": "#1a1a1a",
       "webhookUrl": `${URL}/api/webhook`,
-      "subtitle": "Train Armwrestling Reaction Speed",
+      "subtitle": "Train Reaction Speed",
       "description": "A reaction training app for armwrestling athletes. Improve your start time with randomized audio signals and customizable intervals.",
       "screenshotUrls": [
         `${URL}/screenshot1.png`,
         `${URL}/screenshot2.png`,
         `${URL}/screenshot3.png`
       ],
-      "primaryCategory": "sports",
+      "primaryCategory": "health-fitness",
       "tags": ["reaction", "training", "armwrestling", "sports", "fitness"],
       "heroImageUrl": `${URL}/hero-image.png`,
       "tagline": "React Faster, Win More",
-      "ogTitle": "Ready Go - Armwrestling Reaction Trainer",
+      "ogTitle": "Ready Go - Reaction Trainer",
       "ogDescription": "Train your reaction speed for armwrestling with randomized audio signals.",
       "ogImageUrl": `${URL}/og-image.png`,
       "noindex": false
