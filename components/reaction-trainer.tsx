@@ -132,11 +132,11 @@ export function ReactionTrainer() {
 
       {/* Main Game Area - Removed onClick and cursor-pointer */}
       <main
-        className={`flex-1 flex flex-col items-center justify-center p-6 transition-colors duration-150 select-none ${getStateStyles()}`}
+        className={`flex-1 flex flex-col items-center justify-center p-4 sm:p-6 transition-colors duration-150 select-none ${getStateStyles()}`}
       >
         <div className="text-center">
           <h1
-            className={`text-5xl md:text-7xl font-bold tracking-tighter mb-2 text-foreground`}
+            className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-2 text-foreground`}
           >
             {getMessage()}
           </h1>
@@ -156,9 +156,9 @@ export function ReactionTrainer() {
       </main>
 
       {/* Controls Panel */}
-      <div className="bg-card border-t border-border p-4">
+      <div className="bg-card border-t border-border p-3 sm:p-4">
         <div className="max-w-lg mx-auto">
-          <div className="mb-6 space-y-4">
+          <div className="mb-4 sm:mb-6 space-y-3 sm:space-y-4">
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="text-xs text-muted-foreground uppercase tracking-wider">Min Interval</label>
