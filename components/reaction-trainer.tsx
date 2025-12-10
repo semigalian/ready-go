@@ -21,10 +21,21 @@ export function ReactionTrainer() {
   const playBeep = useCallback(() => {
     if (!audioRef.current) {
       audioRef.current = new Audio('/Ready Go.mp3')
+      audioRef.current.preload = 'auto'
     }
+    
+    // Try to play the audio
     audioRef.current.currentTime = 0
     audioRef.current.play().catch(error => {
       console.error('Error playing audio:', error)
+      
+      // Fallback: try to create a new audio element
+      const fallbackAudio = new Audio('/Ready Go.mp3')
+      fallbackAudio.play().catch(fallbackError => {
+        console.error('Fallback audio also failed:', fallbackError)
+        // Show visual indicator if audio fails
+        console.log('Audio blocked - visual only mode')
+      })
     })
   }, [])
 
@@ -60,7 +71,24 @@ export function ReactionTrainer() {
   const startLoop = useCallback(() => {
     setGameState("running")
     setIsSignalActive(false)
-    scheduleNextBeep()
+    
+    // Test audio playback immediately on user interaction
+    if (!audioRef.current) {
+      audioRef.current = new Audio('/Ready Go.mp3')
+      audioRef.current.preload = 'auto'
+    }
+    
+    // Try to play a silent test to initialize audio context
+    audioRef.current.volume = 0
+    audioRef.current.play().then(() => {
+      audioRef.current!.pause()
+      audioRef.current!.volume = 1
+      console.log('Audio context initialized successfully')
+      scheduleNextBeep()
+    }).catch(error => {
+      console.error('Audio initialization failed:', error)
+      scheduleNextBeep() // Continue without audio
+    })
   }, [scheduleNextBeep])
 
   const stopLoop = useCallback(() => {
