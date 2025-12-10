@@ -98,23 +98,8 @@ export function ReactionTrainer() {
         className={`flex-1 flex flex-col items-center justify-center p-6 transition-colors duration-150 select-none ${getStateStyles()}`}
       >
         <div className="text-center">
-          {isSignalActive && (
-            <div className="mb-8 animate-bounce">
-              <div className="flex justify-center items-center gap-2 mb-4">
-                <div className="w-4 h-4 bg-primary rounded-full animate-ping" />
-                <div className="w-6 h-6 bg-primary rounded-full animate-ping delay-75" />
-                <div className="w-8 h-8 bg-primary rounded-full animate-ping delay-150" />
-                <div className="w-6 h-6 bg-primary rounded-full animate-ping delay-75" />
-                <div className="w-4 h-4 bg-primary rounded-full animate-ping" />
-              </div>
-              <div className="text-xs text-primary uppercase tracking-wider animate-pulse">Sound Signal</div>
-            </div>
-          )}
-
           <h1
-            className={`text-5xl md:text-7xl font-bold tracking-tighter mb-2 ${
-              isSignalActive ? "text-primary scale-110 animate-pulse" : "text-foreground"
-            }`}
+            className={`text-5xl md:text-7xl font-bold tracking-tighter mb-2 text-foreground`}
           >
             {getMessage()}
           </h1>
